@@ -1,0 +1,107 @@
+/* Main container for assignments */
+.assignments-container {
+  padding: 30px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+/* Title of assignments section */
+.assignments-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Flex container for metrics and partner-overview */
+.metrics,
+.partner-overview {
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  margin: 10px;
+}
+
+/* Layout for the metrics and partner overview to be side by side */
+.metrics-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+/* Active Assignments Section */
+.active-assignments {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styling */
+.assignments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Table headers and cells styling */
+.assignments-table th,
+.assignments-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Table headers styling */
+.assignments-table th {
+  background-color: #7e0903;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Table rows styling */
+.assignments-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.assignments-table tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 768px) {
+  .assignments-container {
+    padding: 15px;
+  }
+
+  .assignments-table {
+    font-size: 12px;
+  }
+
+  .assignments-table th,
+  .assignments-table td {
+    padding: 8px;
+  }
+
+  .metrics-container {
+    flex-direction: column;
+  }
+
+  .metrics,
+  .partner-overview {
+    margin-bottom: 15px;
+    flex: none;
+    width: 100%;
+  }
+}
