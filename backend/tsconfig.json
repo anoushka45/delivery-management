@@ -1,14 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES6",                // Target ECMAScript 6 (ES6) for modern JavaScript
-    "module": "CommonJS",           // CommonJS for Node.js compatibility
-    "outDir": "./dist",             // Output the compiled JavaScript files into the dist folder
-    "rootDir": "./src",             // Source files are in the src folder
-    "strict": true,                 // Enable strict type-checking
-    "esModuleInterop": true,        // Allows default imports from CommonJS modules
-    "maxNodeModuleJsDepth": 2       // Limits the depth of node module resolution
-  },
-  "include": [
-    "src/**/*"                      // Include all files in the src directory
-  ]
+    "target": "ES6",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true
+  }
 }
