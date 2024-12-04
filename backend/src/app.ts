@@ -9,10 +9,7 @@ import assignmentsRoutes from './routes/assignments';
 dotenv.config();
 
 const app = express();
-app.use(cors({
-  origin: 'https://delivery-management-psi.vercel.app', // Replace with your Vercel front-end URL
-}));
-
+app.use(cors());
 app.use(express.json());
 
 // Routes
