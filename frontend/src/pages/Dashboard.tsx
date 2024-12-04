@@ -58,21 +58,23 @@ const Dashboard: React.FC = () => {
   return (
     <Layout>
       <div className="dashboard-container">
-        <h1 className="dashboard-title">Dashboard</h1>
-        <p className="dashboard-overview">
-          The dashboard provides a centralized overview of critical metrics and recent activity, 
-          including order statuses, partner availability, and assignments. It is designed to help 
-          users monitor operations efficiently and make informed decisions.
-        </p>
+        {/* Banner Section */}
+        <div className="dashboard-banner">
+          <h1 className="dashboard-title">Dashboard</h1>
+          <p className="dashboard-overview">
+            The dashboard provides a centralized overview of critical metrics and recent activity, 
+            including order statuses, partner availability, and assignments. It is designed to help 
+            users monitor operations efficiently and make informed decisions.
+          </p>
+        </div>
 
         {/* Metrics Section */}
         {metrics && (
-            <div className="metrics-container">
-
+          <div className="metrics-container">
             {Object.entries(metrics).map(([key, value]) => (
               <div className="metric-card" key={key}>
-                <h3>{key.replace(/([A-Z])/g, ' $1')}</h3>
-                <p>{value}</p>
+                <h3 className="metric-title">{key.replace(/([A-Z])/g, ' $1')}</h3>
+                <p className="metric-value">{value}</p>
               </div>
             ))}
           </div>

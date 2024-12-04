@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://smart-delivery-backend.onrender.com', // Backend server address
+  baseURL: 'https://delivery-management-q80j.onrender.com', // Backend server address
 });
 
 // Fetch orders
