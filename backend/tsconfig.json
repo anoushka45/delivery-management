@@ -5,6 +5,8 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "maxNodeModuleJsDepth": 2 // Add this to limit depth of module resolution
+
   }
 }
