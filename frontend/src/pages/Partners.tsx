@@ -78,7 +78,6 @@ const Partners: React.FC = () => {
 
         {/* Add Partner Form */}
         <div className="form-container">
-          <br />
           <input
             type="text"
             placeholder="Name"
@@ -103,24 +102,26 @@ const Partners: React.FC = () => {
             value={newPartner.areas.join(', ')}
             onChange={(e) => setNewPartner({ ...newPartner, areas: e.target.value.split(',') })}
           />
-          <input
-            type="text"
-            placeholder="Shift Start"
-            value={newPartner.shift.start}
-            onChange={(e) => setNewPartner({
-              ...newPartner,
-              shift: { ...newPartner.shift, start: e.target.value }
-            })}
-          />
-          <input
-            type="text"
-            placeholder="Shift End"
-            value={newPartner.shift.end}
-            onChange={(e) => setNewPartner({
-              ...newPartner,
-              shift: { ...newPartner.shift, end: e.target.value }
-            })}
-          />
+          <div className="shift-inputs">
+            <input
+              type="text"
+              placeholder="Shift Start"
+              value={newPartner.shift.start}
+              onChange={(e) => setNewPartner({
+                ...newPartner,
+                shift: { ...newPartner.shift, start: e.target.value }
+              })}
+            />
+            <input
+              type="text"
+              placeholder="Shift End"
+              value={newPartner.shift.end}
+              onChange={(e) => setNewPartner({
+                ...newPartner,
+                shift: { ...newPartner.shift, end: e.target.value }
+              })}
+            />
+          </div>
           <button onClick={handleAddPartner}>Add Partner</button>
         </div>
 

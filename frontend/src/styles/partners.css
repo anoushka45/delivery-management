@@ -1,9 +1,11 @@
-/* Container for partners */
+/* Main container for partners */
 .partners-container {
   padding: 30px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1400px;
+  margin: auto;
 }
 
 /* Form container styling */
@@ -18,12 +20,17 @@
 /* Input fields styling */
 .form-container input {
   flex: 1;
-  min-width: 220px;
+  min-width: 200px;
   padding: 12px 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 14px;
   transition: border-color 0.3s ease;
+}
+
+.shift-inputs {
+  display: flex;
+  gap: 15px;
 }
 
 /* Button styling */
@@ -92,5 +99,9 @@
 
   .form-container input, .form-container button {
     width: 100%;
+  }
+
+  .shift-inputs {
+    flex-direction: column;
   }
 }
