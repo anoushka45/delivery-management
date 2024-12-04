@@ -10,7 +10,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: 'https://your-vercel-domain.vercel.app', // Replace with your Vercel front-end URL
+  origin: 'https://delivery-management-psi.vercel.app/', // Replace with your Vercel front-end URL
 }));
 
 app.use(express.json());
