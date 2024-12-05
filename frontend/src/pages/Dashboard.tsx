@@ -63,7 +63,11 @@ const Dashboard: React.FC = () => {
   if (loading) {
     return (
       <Layout>
-        <div className="loading">Loading...</div>
+        <div className="loading">
+          <div className="spinner"></div>
+          Loading...
+        </div>
+
       </Layout>
     );
   }
@@ -100,11 +104,11 @@ const Dashboard: React.FC = () => {
         label: 'Order Trends',
         data: metrics
           ? [
-              metrics.totalOrders,
-              metrics.pendingOrders,
-              metrics.assignedOrders,
-              metrics.deliveredOrders,
-            ]
+            metrics.totalOrders,
+            metrics.pendingOrders,
+            metrics.assignedOrders,
+            metrics.deliveredOrders,
+          ]
           : [],
         fill: false,
         borderColor: '#36A2EB',
@@ -131,9 +135,9 @@ const Dashboard: React.FC = () => {
       <div className="dashboard-container">
         {/* Dashboard Heading */}
         <header className="dashboard-header">
-          
+
           <div className="dashboard-banner">
-          <h1>Delivery Dashboard</h1>
+            <h1>Delivery Dashboard</h1>
             <p className='intro'>Welcome to the Dashboard. Here you can get an overview of the key metrics and analyze graphical data trends.</p>
           </div>
         </header>

@@ -1,48 +1,97 @@
 /* Main container for assignments */
 .assignments-container {
   padding: 30px;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  max-width: 1400px;
+  margin: 60px;
 }
 
 /* Title of assignments section */
 .assignments-title {
   text-align: center;
-  font-size: 24px;
   font-weight: 600;
   color: #333;
   margin-bottom: 30px;
 }
 
-/* Flex container for metrics and partner-overview */
-.metrics,
-.partner-overview {
-  padding: 20px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  margin: 10px;
+
+
+
+h2, h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
-/* Layout for the metrics and partner overview to be side by side */
-.metrics-container {
+ul {
+  padding-left: 20px;
+}
+
+
+
+
+
+.failure-reasons-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 10px;
+}
+
+.failure-reasons-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.failure-reason-item {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-/* Active Assignments Section */
-.active-assignments {
-  margin-top: 30px;
-  padding: 20px;
-  border: 1px solid #e0e0e0;
+  align-items: center;
+  padding: 12px 15px;
   border-radius: 8px;
   background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.failure-reason-item:hover {
+  background-color: #eaf3fc;
+  transform: translateY(-2px);
+}
+
+.reason-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #5a5a5a;
+}
+
+.reason-count {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #007bff;
+}
+
+@media (max-width: 600px) {
+  .failure-reason-item {
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1440px) {
+  .assignments-container {
+   margin: 60px auto;
+  }
+}
+
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
 }
 
 /* Table styling */
@@ -52,9 +101,8 @@
   margin-top: 20px;
 }
 
-/* Table headers and cells styling */
-.assignments-table th,
-.assignments-table td {
+/* Table header and cell styling */
+.assignments-table th, .assignments-table td {
   border: 1px solid #ddd;
   padding: 12px;
   text-align: left;
@@ -62,46 +110,36 @@
   color: #333;
 }
 
-/* Table headers styling */
+/* Table header background */
 .assignments-table th {
-  background-color: #7e0903;
+  background-color: #9f0101;
   color: white;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
-/* Table rows styling */
+/* Alternate row styling */
 .assignments-table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-.assignments-table tr:hover {
-  background-color: #f1f1f1;
-  cursor: pointer;
+
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 50px;
+
 }
 
-/* Responsive styling for smaller screens */
-@media screen and (max-width: 768px) {
-  .assignments-container {
-    padding: 15px;
-  }
+.metrics-item {
+  background: #edf9ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  .assignments-table {
-    font-size: 12px;
-  }
-
-  .assignments-table th,
-  .assignments-table td {
-    padding: 8px;
-  }
-
-  .metrics-container {
-    flex-direction: column;
-  }
-
-  .metrics,
-  .partner-overview {
-    margin-bottom: 15px;
-    flex: none;
-    width: 100%;
-  }
+.bar-chart-container, .doughnut-container {
+  width: 100%;
+  height: 300px;
 }

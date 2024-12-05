@@ -60,8 +60,12 @@ const Orders: React.FC = () => {
   if (loading) {
     return (
       <Layout>
-        <div className="loading">Loading...</div>
-      </Layout>
+      <div className="loading">
+        <div className="spinner"></div>
+        Loading...
+      </div>
+
+    </Layout>
     );
   }
 
@@ -69,12 +73,12 @@ const Orders: React.FC = () => {
 
   return (
     <Layout>
+
       <div className="orders-container">
-        <h1 className="orders-title">Orders Management</h1>
+        <h1 className="orders-title">Orders</h1>
 
         {/* Filters */}
         <div className="filters">
-          <h2>Filters</h2>
           <select
             value={filter.status}
             onChange={(e) => setFilter({ ...filter, status: e.target.value })}
@@ -85,12 +89,7 @@ const Orders: React.FC = () => {
             <option value="picked">Picked</option>
             <option value="delivered">Delivered</option>
           </select>
-          <input
-            type="text"
-            placeholder="Filter by Area"
-            value={filter.area}
-            onChange={(e) => setFilter({ ...filter, area: e.target.value })}
-          />
+          
           <input
             type="date"
             value={filter.date}
@@ -99,6 +98,8 @@ const Orders: React.FC = () => {
         </div>
 
         {/* Orders Table */}
+        <div className="table-container">
+
         <table className="orders-table">
           <thead>
             <tr>
@@ -144,6 +145,7 @@ const Orders: React.FC = () => {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     </Layout>
   );

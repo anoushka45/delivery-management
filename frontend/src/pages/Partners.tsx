@@ -67,13 +67,16 @@ const Partners: React.FC = () => {
     }
   };
 
-  if (loading) return <Layout><div>Loading...</div></Layout>;
+  if (loading) return <Layout> <div className="loading">
+    <div className="spinner"></div>
+    Loading...
+  </div></Layout>;
 
   return (
     <Layout>
+
       <div className="partners-container">
-        <h1>Partners Management</h1>
-        <hr />
+        <h1 className='partner-title'>Partners Management</h1>
         <br />
 
         {/* Add Partner Form */}
@@ -150,7 +153,6 @@ const Partners: React.FC = () => {
                   <td>{partner.areas.join(', ')}</td>
                   <td>{`${partner.shift.start} - ${partner.shift.end}`}</td>
                   <td>
-                    <button onClick={() => setEditingPartner(partner)}>Edit</button>
                     <button onClick={() => handleDeletePartner(partner._id)}>Delete</button>
                   </td>
                 </tr>
