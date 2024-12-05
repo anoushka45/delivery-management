@@ -4,6 +4,7 @@ import { Partner } from '../types';
 import { fetchPartners } from '../services/api';
 import Layout from './Layout';
 import '../styles/partners.css';
+import Footer from './Footer';
 
 const Partners: React.FC = () => {
   const [partners, setPartners] = useState<Partner[]>([]);
@@ -161,6 +162,8 @@ const Partners: React.FC = () => {
           </table>
         </div>
       </div>
+      <Footer/>
+
     </Layout>
   );
 };

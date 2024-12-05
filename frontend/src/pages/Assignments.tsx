@@ -6,7 +6,7 @@ import '../styles/assignments.css';
 import { Bar, Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { fetchAssignments, fetchAssignmentsMetrics } from '../services/api';
-
+import Footer from './Footer';
 // Register chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -95,8 +95,13 @@ const Assignments: React.FC = () => {
           {metrics && (
             <div className="metrics-item ">
               <h2>Metrics</h2>
-              <div className="bar-chart-container">
-                <Bar data={barChartData} options={{ responsive: true, plugins: { title: { display: true, text: 'Metrics Overview' } } }} />
+              <div className="bar-chart-container bar-chart">
+                <Bar data={barChartData} options={{
+                  responsive: true,
+                  maintainAspectRatio: false, // Allow the chart to resize freely
+
+                  plugins: { title: { display: true, text: 'Metrics Overview' } }
+                }} />
               </div>
 
             </div>
@@ -140,41 +145,43 @@ const Assignments: React.FC = () => {
         <div className="active-assignments">
           <h2>Active Assignments</h2>
           <div className='table-container'>
-          <table className="assignments-table">
-            <thead>
-              <tr>
-                <th>Order Number</th>
-                <th>Partner</th>
-                <th>Status</th>
-                <th>Reason</th>
-                <th>Timestamp</th>
-              </tr>
-            </thead>
-            <tbody>
-              {assignments.map((assignment) => (
-                <tr key={assignment._id}>
-                  <td>{assignment.orderId.orderNumber}</td>
-                  <td>
-                    {assignment.partnerId ? (
-                      <>
-                        {assignment.partnerId.name} <br />
-                        {assignment.partnerId.email} <br />
-                        {assignment.partnerId.phone}
-                      </>
-                    ) : (
-                      'Not Assigned'
-                    )}
-                  </td>
-                  <td>{assignment.status}</td>
-                  <td>{assignment.reason || 'N/A'}</td>
-                  <td>{new Date(assignment.timestamp).toLocaleString()}</td>
+            <table className="assignments-table">
+              <thead>
+                <tr>
+                  <th>Order Number</th>
+                  <th>Partner</th>
+                  <th>Status</th>
+                  <th>Reason</th>
+                  <th>Timestamp</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {assignments.map((assignment) => (
+                  <tr key={assignment._id}>
+                    <td>{assignment.orderId.orderNumber}</td>
+                    <td>
+                      {assignment.partnerId ? (
+                        <>
+                          {assignment.partnerId.name} <br />
+                          {assignment.partnerId.email} <br />
+                          {assignment.partnerId.phone}
+                        </>
+                      ) : (
+                        'Not Assigned'
+                      )}
+                    </td>
+                    <td>{assignment.status}</td>
+                    <td>{assignment.reason || 'N/A'}</td>
+                    <td>{new Date(assignment.timestamp).toLocaleString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
+
+      <Footer />
     </Layout>
   );
 };

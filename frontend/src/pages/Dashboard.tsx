@@ -3,6 +3,7 @@ import { Bar, Pie, Line } from 'react-chartjs-2';
 import { Metrics } from '../types';
 import { fetchOrders, fetchPartners } from '../services/api';
 import Layout from './Layout';
+import Footer from './Footer';
 import '../styles/dashboard.css';
 import {
   Chart as ChartJS,
@@ -182,6 +183,8 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <Footer/>
     </Layout>
   );
 };

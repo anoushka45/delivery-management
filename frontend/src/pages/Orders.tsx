@@ -4,6 +4,7 @@ import { Order } from '../types';
 import Layout from './Layout';
 import '../styles/orders.css';
 import { fetchOrders } from '../services/api';
+import Footer from './Footer';
 
 const Orders: React.FC = () => {
   const [orders, setOrders] = useState<Order[]>([]);
@@ -147,6 +148,8 @@ const Orders: React.FC = () => {
         </table>
         </div>
       </div>
+      <Footer/>
+
     </Layout>
   );
 };
