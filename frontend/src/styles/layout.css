@@ -1,72 +1,76 @@
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
+/* Navbar styling */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #7e0903;
-  color: white;
-  padding: 15px 20px;
+  background-color: #780101;
+  padding: 10px 20px;
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: bold;
+  color: white;
+  font-size: 24px;
 }
 
+/* Menu icon styling for smaller screens */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.icon-bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Navigation links styling */
 .nav-links {
   display: flex;
+  gap: 20px;
 }
 
 .nav-links a {
-  color: white;
+  color: rgb(255, 252, 252);
   text-decoration: none;
-  margin: 0 10px;
+  font-size: 18px;
 }
 
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-  background-color: #f9f9f9;
-}
-
-/* Responsive Styles */
+/* For smaller screens, hide the menu and show the icon */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 10px 15px;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #770000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    border-radius: 5px;
   }
 
-  .logo {
-    font-size: 18px;
+  .nav-links.open {
+    display: flex;
   }
 
-  .nav-links a {
-    font-size: 14px; /* Smaller text size for links */
-  }
-
-  .content {
-    padding: 15px;
+  .menu-icon {
+    display: flex;
   }
 }
 
+/* For even smaller screens */
 @media (max-width: 480px) {
   .logo {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .nav-links a {
-    font-size: 12px; /* Further reduce font size on smaller screens */
-  }
-
-  .content {
-    padding: 10px;
+    font-size: 16px;
+    color: black;
   }
 }
